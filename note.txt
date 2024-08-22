@@ -1,0 +1,10 @@
+Dessign UL shortner that takes valid url and return short url that redirevt user to orignal url
+
+also keep track of total visit
+
+Routes:
+POST/URL: genrate short url and return short url in format of example.com/random-id.
+
+GET/:id: redirect user to orignal url
+ 
+ GET/URL/analytics/:id : return click for provided short url
