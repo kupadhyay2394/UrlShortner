@@ -9,12 +9,13 @@ async function handleGenrateNewShortUrl(req,res){
             redirectUrl:body.url,
             visitHistory:[],
         })
-        return res.json({id:shortID});
+        return res.render('home',{id:shortID});
 
     
 }
 
 async function handleGetAnaltycs(req,res){
+    
     const shortUrl=req.params.shortUrl;
     const result=await URL.findOne({ shortUrl},);
     console.log(shortUrl)

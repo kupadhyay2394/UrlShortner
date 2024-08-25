@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    
+    <h1>Url_Shortner_App</h1>
+    <% if (locals.id) { %>
+        <h2>Shortened URL: <%= id %></h2>
+    <% } %>
+    <form method="post" action="/api/url">
+        <label>Enter the Url </label>
+        <input type="text" name="url" placeholder="url"/>
+        <button type="submit" value="Generate">Generate</button>
+    </form>
+    <table>
+        <thead>
+          <th>SR.NO</th>
+          <th>Redirect Url</th>
+          <th>ShortenedUrl</th>
+          <th>Visited</th>
+        </thead>
+        <% if(locals.urls){%>
+        <tbody>
+            
+            <%urls.forEach((url,index) => {%>
+                <tr>
+                
+                <td><%= index+1 %></td>
+                <td><%= url.shortUrl%></td>
+                <td><%= url.redirectUrl%></td>
+                <td><%= url.visitHistory.length%></td>
+                </tr>
+            <%});%>
+        
+        </tbody>
+        <%}%>
+        
+      </table>
+
+    
+</body>
+</html>
