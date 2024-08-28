@@ -6,6 +6,10 @@
     <title>Home</title>
 </head>
 <body>
+    <%if(locals.user){%>
+        <h2><%= user%></h2>
+
+    <%}%>
     
     <h1>Url_Shortner_App</h1>
     <% if (locals.id) { %>
